@@ -18,13 +18,15 @@
     <input id="base" type="color" name="base" value="#ffc600">
   </div>
 
-  <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+  <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500" alt="image">
 
   <style>
+
     :root {
       --base: #ffc600;
-      --spacing: 10px;
+      --spacing: 30px;
       --blur: 10px;
+
     }
 
     img {
@@ -36,10 +38,6 @@
     .hl {
       color: var(--base);
     }
-
-    /*
-      misc styles, nothing to do with CSS variables
-    */
 
     body {
       text-align: center;
@@ -60,17 +58,16 @@
   </style>
 
   <script>
-    const inputs = document.querySelectorAll('.controls input');
+  const inputs = document.querySelectorAll('.controls input');
 
-    function handleUpdate() {
-      const suffix = this.dataset.sizing || '';
-      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
-    }
+  function handleUpdate() {
+    const suffix = this.dataset.sizing || '';
+    document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+  }
 
-    inputs.forEach(input => input.addEventListener('change', handleUpdate));
-    inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+  inputs.forEach(input => input.addEventListener('change', handleUpdate));
+  inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
   </script>
-
 
 </body>
 </html>
